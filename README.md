@@ -42,5 +42,5 @@ val isoMsg = Map(
         105 -> "ABC"
 )
 
-val buf = ISODef.reduce(isoDef)(isoMsg)
+val Success(buf) = ISODef.reduce(isoDef)(isoMsg)
 ```
