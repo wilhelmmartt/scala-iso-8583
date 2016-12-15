@@ -19,7 +19,7 @@ val isoDef = ISODef(
         11 -> fixed(6),
         44 -> ll,
         105 -> lll
-      )
+)
 ```
 
 The example above we define bit 3 has a fixed length of 6 bytes, bit 4 has a fixed length of 12 and so on. Bits 44 and 105 has variable length which means your length is prefixed with data where ll is prefix of 2 bytes and lll is prefix of 3 bytes.
@@ -40,7 +40,7 @@ val isoMsg = Map(
         7 -> "1012194700",
         44 -> "123456",
         105 -> "ABC"
-      )
+)
 
-      val buf = ISODef.reduce(isoDef)(isoMsg)
+val buf = ISODef.reduce(isoDef)(isoMsg)
 ```
