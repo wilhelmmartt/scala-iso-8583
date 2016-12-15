@@ -11,7 +11,7 @@ A simple implementation of ISO 8583 messages for Scala.
 
 First of all, you need to provide a definition of your message. A definition is a seq of tuples (Int, BitOps) where BitOps is a type for parser and reducer functions.
 
-```
+```scala
 val isoDef = ISODef(
         3 -> fixed(6),
         4 -> fixed(12),
@@ -26,13 +26,13 @@ The example above we define bit 3 has a fixed length of 6 bytes, bit 4 has a fix
 
 To parse a message you should use ISODef.parse passing the definition and the message buffer.
 
-```
+```scala
 val Success(isoMsg) = ISODef.parse(isoDef)(msg)
 ```
 
 Use ISODef.reduce to reduce an ISOMsg to a message buffer
 
-```
+```scala
 val isoMsg = Map(
         0 -> "0200",
         3 -> "000001",
