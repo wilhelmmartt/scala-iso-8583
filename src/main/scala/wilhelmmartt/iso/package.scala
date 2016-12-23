@@ -16,7 +16,6 @@ package object iso {
   type BitMapReducer = List[Int] => Try[String]
   type BitMapOps = (BitMapParser, BitMapReducer)
 
-  type ISOMsg = Map[Int, String]
   type ISOMsgList = List[(Int, String)]
 
   val bitMapSize = 16

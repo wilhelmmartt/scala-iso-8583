@@ -7,6 +7,7 @@ package wilhelmmartt.iso
 private[iso] case class ReducerException(reason: String) extends IllegalStateException(reason)
 
 object ReducerException {
+  def invalidMessage = new ReducerException("Invalid Message")
   def noData = new ReducerException("Data is Empty")
   def lengthDiffers(dataLen: Int, fieldLen: Int) = new ReducerException(s"Data length ($dataLen) differs from field length ($fieldLen)")
   def tooLong(maxLen: Int, currLen: Int) = new ReducerException(s"Invalid size. Max: $maxLen, current: $currLen")

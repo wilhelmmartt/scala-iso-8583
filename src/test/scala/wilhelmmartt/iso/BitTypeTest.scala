@@ -3,12 +3,12 @@ package wilhelmmartt.iso
 import org.scalatest.{Matchers, WordSpec}
 
 import scala.util.{Failure, Success}
-import BitDef._
+import BitType._
 
 /**
   * Created by wll on 17/10/16.
   */
-class BitDefTest extends WordSpec with Matchers {
+class BitTypeTest extends WordSpec with Matchers {
 
   val (bitMapParser, bitMapReducer) = bitMap
 

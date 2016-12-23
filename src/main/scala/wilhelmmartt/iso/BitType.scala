@@ -8,7 +8,7 @@ import Utils._
   *
   * Created by wilhelmmartt on 09/10/16.
   */
-object BitDef {
+object BitType {
 
   /** A special type of bit definition for ISOs. It is used to inform which bits are currently in a message.
     * Parser: It receives a buffer, parse, checking if it has an extended bitmap. It returns the List of bits and rest of buffer.
@@ -105,4 +105,12 @@ object BitDef {
     */
   def lll : BitOps = variable(3)
 
+  /** Micro dsl to create bit definitions
+    *
+    * @param bit
+    */
+  implicit class BitDefDsl(bit: Int) {
+    def ~> (l: Int) = bit -> fixed(l)
+    def ~> (ops: BitOps) = bit -> ops
+  }
 }
